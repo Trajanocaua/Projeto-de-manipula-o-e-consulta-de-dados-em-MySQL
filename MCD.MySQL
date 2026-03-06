@@ -1,0 +1,40 @@
+-- Criando tabela de funcionários
+CREATE TABLE funcionarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50),
+    cargo VARCHAR(50),
+    salario DECIMAL(10,2)
+);
+
+-- Inserindo dados
+INSERT INTO funcionarios (nome, cargo, salario) VALUES
+('Ana', 'Analista', 3000.00),
+('Carlos', 'Programador', 4000.00),
+('João', 'Estagiário', 1500.00),
+('Marina', 'Gerente', 6000.00),
+('Pedro', 'Suporte', 2500.00);
+
+-- Selecionar todos
+SELECT * FROM funcionarios;
+
+-- Salário maior que 2500
+SELECT nome, salario
+FROM funcionarios
+WHERE salario > 2500;
+
+-- Ordenar por salário
+SELECT nome, salario
+FROM funcionarios
+ORDER BY salario DESC;
+
+-- Média salarial
+SELECT AVG(salario) AS media_salarial
+FROM funcionarios;
+
+-- Maior salário
+SELECT MAX(salario) AS maior_salario
+FROM funcionarios;
+
+-- Contagem de funcionários
+SELECT COUNT(*) AS total_funcionarios
+FROM funcionarios;
